@@ -1,10 +1,10 @@
 syms x
-disp('Método de Interpolación de Neville')
+disp('MÃ©todo de InterpolaciÃ³n de Neville')
 % Ingreso de los vectores de valores de X y Y
 X = input('Ingrese los valores de x: ');
 Y = input('Ingrese los valores de y: ');
 aprox = input('Ingrese el valor a aproximar: ');
-% Leyendo el tamaño del vector X
+% Leyendo el tamaÃ±o del vector X
 n = length(X);
 % Formando una matriz de ceros de orden nxn
 Q = zeros(n);
@@ -25,3 +25,6 @@ end
 fprintf('---- MATRIZ DE VALORES Q------ \n');
 display(Q)
 fprintf('El valor aproximado es: %.15f \n\n', double(Q(n,n)));
+
+%interp1(X,Y,Xi,'linear');
+%interp1(X,Y,Xi,'linear', 'extrap');
