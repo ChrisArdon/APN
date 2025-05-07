@@ -1,0 +1,19 @@
+Diferencial normal
+>> syms t y;
+>> exacta=dsolve('2*y+Dy=2*sin(2*t)-1','y(pi/4)=0')
+>> T=[pi/4:pi/50:41*pi/100];
+>> Y=subs(exacta,T);
+>> double(Y')
+
+Sistema de ecuaciones diferenciales
+>> syms t y x
+>> [X Y]=dsolve('Dx=-4*x-2*y+cos(t)+4*sin(t)','Dy=3*x+y-3*sin(t)','x(0)=0','y(0)=-1')
+>> T=[0:0.02:0.2];
+>> Exacta=[double(subs(X,T))' double(subs(Y,T)')]
+
+Orden Superior
+>> syms t y 
+>> exacta=dsolve('D3y+2*D2y-Dy-2*y=exp(t)','y(0)=1','Dy(0)=2','D2y(0)=0')
+>> T=[0:0.05:0.5];
+>> Y=subs(exacta,T);
+>> double(Y')
